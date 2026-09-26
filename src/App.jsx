@@ -3,6 +3,7 @@ import { Link, Navigate, Route, Routes, useLocation, useParams } from 'react-rou
 import './App.css'
 import phi from './assets/phi.svg'
 import PhiScramble from './PhiScramble'
+import PortfolioImage from './PortfolioImage'
 import { sections, layoutFor, frameSrc } from './projects'
 
 const pad = (n) => String(n).padStart(2, '0')
@@ -98,7 +99,7 @@ function Home() {
                 className={`tile cat${s.cover ? '' : ' empty'}`}
                 style={{ '--c': col, '--r': row }}
               >
-                {s.cover && <img src={s.cover} alt="" loading="lazy" />}
+                {s.cover && <PortfolioImage src={s.cover} />}
                 <span className="cat-count">{count ? `${pad(count)} ${count === 1 ? 'Project' : 'Projects'}` : 'Coming soon'}</span>
                 <strong className="cat-label">{s.title}</strong>
               </Link>
@@ -130,7 +131,7 @@ function Cluster({ c, project, index, count, number }) {
         }
         return (
           <figure key={key} className={`tile${key === 'hero' ? ' hero' : ''}`} style={style}>
-            <img src={frameSrc(c.base, key)} alt={`${project.name} ${project.kind.toLowerCase()} still`} loading="lazy" />
+            <PortfolioImage src={frameSrc(c.base, key)} alt={`${project.name} ${project.kind.toLowerCase()} still`} hero={key === 'hero'} />
           </figure>
         )
       })}

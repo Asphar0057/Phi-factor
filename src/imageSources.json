@@ -1,0 +1,634 @@
+{
+  "/work/aandhi-1-big.jpg": {
+    "src": "/work/originals/aandhi-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      884,
+      1369,
+      610
+    ]
+  },
+  "/work/aandhi-1-hero.jpg": {
+    "src": "/work/originals/aandhi-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      5,
+      2091,
+      862
+    ]
+  },
+  "/work/aandhi-1-s1.jpg": {
+    "src": "/work/originals/aandhi-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      1383,
+      884,
+      712,
+      302
+    ]
+  },
+  "/work/aandhi-1-s2.jpg": {
+    "src": "/work/originals/aandhi-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      1383,
+      1202,
+      712,
+      292
+    ]
+  },
+  "/work/aandhi-2-big.jpg": {
+    "src": "/work/originals/aandhi-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      887,
+      1319,
+      607
+    ]
+  },
+  "/work/aandhi-2-hero.jpg": {
+    "src": "/work/originals/aandhi-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      5,
+      2091,
+      862
+    ]
+  },
+  "/work/aandhi-2-s1.jpg": {
+    "src": "/work/originals/aandhi-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      1340,
+      887,
+      755,
+      292
+    ]
+  },
+  "/work/aandhi-2-s2.jpg": {
+    "src": "/work/originals/aandhi-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      1340,
+      1199,
+      755,
+      295
+    ]
+  },
+  "/work/chittha-1-big.jpg": {
+    "src": "/work/originals/chittha.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      802,
+      1359,
+      554
+    ]
+  },
+  "/work/chittha-1-hero.jpg": {
+    "src": "/work/originals/chittha.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      4,
+      2092,
+      777
+    ]
+  },
+  "/work/chittha-1-s1.jpg": {
+    "src": "/work/originals/chittha.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      1383,
+      802,
+      712,
+      249
+    ]
+  },
+  "/work/chittha-1-s2.jpg": {
+    "src": "/work/originals/chittha.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      1383,
+      1071,
+      712,
+      285
+    ]
+  },
+  "/work/chittha-2-big.jpg": {
+    "src": "/work/originals/chittha-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      5,
+      803,
+      1360,
+      553
+    ]
+  },
+  "/work/chittha-2-hero.jpg": {
+    "src": "/work/originals/chittha-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      5,
+      2091,
+      777
+    ]
+  },
+  "/work/chittha-2-s1.jpg": {
+    "src": "/work/originals/chittha-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      1383,
+      802,
+      712,
+      266
+    ]
+  },
+  "/work/chittha-2-s2.jpg": {
+    "src": "/work/originals/chittha-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      1383,
+      1086,
+      713,
+      269
+    ]
+  },
+  "/work/coco-1-a.jpg": {
+    "src": "/work/originals/coco-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      4,
+      581,
+      735
+    ]
+  },
+  "/work/coco-1-b.jpg": {
+    "src": "/work/originals/coco-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      605,
+      4,
+      479,
+      735
+    ]
+  },
+  "/work/coco-1-c.jpg": {
+    "src": "/work/originals/coco-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      759,
+      581,
+      735
+    ]
+  },
+  "/work/coco-1-d.jpg": {
+    "src": "/work/originals/coco-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      605,
+      759,
+      479,
+      735
+    ]
+  },
+  "/work/coco-1-e.jpg": {
+    "src": "/work/originals/coco-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      1100,
+      4,
+      995,
+      1490
+    ]
+  },
+  "/work/coco-2-a.jpg": {
+    "src": "/work/originals/coco-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      4,
+      581,
+      735
+    ]
+  },
+  "/work/coco-2-b.jpg": {
+    "src": "/work/originals/coco-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      605,
+      4,
+      479,
+      735
+    ]
+  },
+  "/work/coco-2-c.jpg": {
+    "src": "/work/originals/coco-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      759,
+      581,
+      735
+    ]
+  },
+  "/work/coco-2-d.jpg": {
+    "src": "/work/originals/coco-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      605,
+      759,
+      479,
+      735
+    ]
+  },
+  "/work/coco-2-e.jpg": {
+    "src": "/work/originals/coco-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      1100,
+      4,
+      995,
+      1490
+    ]
+  },
+  "/work/cs-1-a.jpg": {
+    "src": "/work/originals/cs-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      4,
+      542,
+      696
+    ]
+  },
+  "/work/cs-1-b.jpg": {
+    "src": "/work/originals/cs-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      562,
+      4,
+      522,
+      696
+    ]
+  },
+  "/work/cs-1-c.jpg": {
+    "src": "/work/originals/cs-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      716,
+      542,
+      778
+    ]
+  },
+  "/work/cs-1-d.jpg": {
+    "src": "/work/originals/cs-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      562,
+      716,
+      522,
+      778
+    ]
+  },
+  "/work/cs-1-e.jpg": {
+    "src": "/work/originals/cs-1.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      1104,
+      4,
+      991,
+      1490
+    ]
+  },
+  "/work/cs-2-a.jpg": {
+    "src": "/work/originals/cs-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      4,
+      542,
+      850
+    ]
+  },
+  "/work/cs-2-b.jpg": {
+    "src": "/work/originals/cs-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      562,
+      4,
+      522,
+      850
+    ]
+  },
+  "/work/cs-2-c.jpg": {
+    "src": "/work/originals/cs-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      874,
+      542,
+      620
+    ]
+  },
+  "/work/cs-2-d.jpg": {
+    "src": "/work/originals/cs-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      562,
+      874,
+      522,
+      620
+    ]
+  },
+  "/work/cs-2-e.jpg": {
+    "src": "/work/originals/cs-2.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      1104,
+      4,
+      991,
+      1490
+    ]
+  },
+  "/work/heguruve-hero.jpg": {
+    "src": "/work/originals/heguruve.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      671,
+      4,
+      1424,
+      909
+    ]
+  },
+  "/work/heguruve-l1.jpg": {
+    "src": "/work/originals/heguruve.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      4,
+      650,
+      479
+    ]
+  },
+  "/work/heguruve-l2.jpg": {
+    "src": "/work/originals/heguruve.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      500,
+      650,
+      479
+    ]
+  },
+  "/work/heguruve-l3.jpg": {
+    "src": "/work/originals/heguruve.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      4,
+      995,
+      650,
+      499
+    ]
+  },
+  "/work/heguruve-lowL.jpg": {
+    "src": "/work/originals/heguruve.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      671,
+      930,
+      652,
+      564
+    ]
+  },
+  "/work/heguruve-lowR.jpg": {
+    "src": "/work/originals/heguruve.png",
+    "width": 2100,
+    "height": 1500,
+    "crop": [
+      1340,
+      930,
+      755,
+      564
+    ]
+  },
+  "/work/kamagaari-1-h1.jpg": {
+    "src": "/work/originals/kamagaari-1-h1.png",
+    "width": 3838,
+    "height": 2300,
+    "crop": [
+      14,
+      60,
+      3801,
+      2218
+    ]
+  },
+  "/work/kamagaari-1-h2.jpg": {
+    "src": "/work/originals/kamagaari-1-h2.png",
+    "width": 3836,
+    "height": 2296,
+    "crop": [
+      45,
+      57,
+      3772,
+      2126
+    ]
+  },
+  "/work/kamagaari-1-hero.jpg": {
+    "src": "/work/originals/kamagaari-1-hero.png",
+    "width": 3840,
+    "height": 2304,
+    "crop": [
+      7,
+      132,
+      3824,
+      1603
+    ],
+    "label": [
+      "Kamagaari",
+      "Music video"
+    ]
+  },
+  "/work/kamagaari-2-h1.jpg": {
+    "src": "/work/originals/kamagaari-2-h1.png",
+    "width": 3838,
+    "height": 2248,
+    "crop": [
+      258,
+      35,
+      3559,
+      2098
+    ]
+  },
+  "/work/kamagaari-2-h2.jpg": {
+    "src": "/work/originals/kamagaari-2-h2.png",
+    "width": 3846,
+    "height": 2306,
+    "crop": [
+      46,
+      36,
+      3782,
+      2153
+    ]
+  },
+  "/work/kamagaari-2-hero.jpg": {
+    "src": "/work/originals/kamagaari-2-hero.png",
+    "width": 3834,
+    "height": 2302,
+    "crop": [
+      0,
+      7,
+      3824,
+      1590
+    ],
+    "label": [
+      "Kamagaari",
+      "Music video"
+    ]
+  },
+  "/work/meghave-1-big.jpg": {
+    "src": "/work/originals/meghave-1-big.png",
+    "width": 3840,
+    "height": 1604,
+    "crop": [
+      370,
+      38,
+      3111,
+      1486
+    ]
+  },
+  "/work/meghave-1-hero.jpg": {
+    "src": "/work/originals/meghave-1-hero.png",
+    "width": 3840,
+    "height": 1595,
+    "crop": [
+      0,
+      8,
+      3832,
+      1568
+    ],
+    "label": [
+      "Meghave",
+      "Music video"
+    ]
+  },
+  "/work/meghave-1-s1.jpg": {
+    "src": "/work/originals/meghave-1-s1.png",
+    "width": 3840,
+    "height": 1600,
+    "crop": [
+      61,
+      73,
+      3755,
+      1429
+    ]
+  },
+  "/work/meghave-1-s2.jpg": {
+    "src": "/work/originals/meghave-1-s2.png",
+    "width": 3840,
+    "height": 1601,
+    "crop": [
+      61,
+      200,
+      3754,
+      1372
+    ]
+  },
+  "/work/meghave-2-big.jpg": {
+    "src": "/work/originals/meghave-2-big.png",
+    "width": 3840,
+    "height": 1599,
+    "crop": [
+      188,
+      26,
+      3323,
+      1558
+    ]
+  },
+  "/work/meghave-2-hero.jpg": {
+    "src": "/work/originals/meghave-2-hero.png",
+    "width": 3840,
+    "height": 1606,
+    "crop": [
+      7,
+      0,
+      3824,
+      1590
+    ],
+    "label": [
+      "Meghave",
+      "Music video"
+    ]
+  },
+  "/work/meghave-2-s1.jpg": {
+    "src": "/work/originals/meghave-2-s1.png",
+    "width": 3840,
+    "height": 1606,
+    "crop": [
+      47,
+      47,
+      3769,
+      1386
+    ]
+  },
+  "/work/meghave-2-s2.jpg": {
+    "src": "/work/originals/meghave-2-s2.png",
+    "width": 3840,
+    "height": 1606,
+    "crop": [
+      46,
+      62,
+      3769,
+      1372
+    ]
+  }
+}

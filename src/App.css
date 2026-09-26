@@ -171,7 +171,8 @@
   background: var(--ink);
 }
 .tile img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; display: block; transition: transform 0.7s ease; }
-.tile:hover img { transform: scale(1.04); }
+.portfolio-image { width: 100%; height: 100%; display: block; overflow: hidden; transition: transform 0.7s ease; }
+.tile:hover :is(img, .portfolio-image) { transform: scale(1.04); }
 
 .t-text {
   display: flex; flex-direction: column; justify-content: space-between;
@@ -200,7 +201,7 @@
   transition: opacity 0.4s ease;
 }
 .cat.empty::after { display: none; }
-.cat img { position: absolute; inset: 0; }
+.cat :is(img, .portfolio-image) { position: absolute; inset: 0; }
 .cat-label {
   position: absolute; left: 22px; bottom: 16px; z-index: 2;
   font-weight: 400; font-size: clamp(44px, 7.2vw, 130px); line-height: 0.85;
