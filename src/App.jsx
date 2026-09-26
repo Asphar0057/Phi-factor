@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import './App.css'
 import phi from './assets/phi.svg'
@@ -29,13 +29,56 @@ function ScrollManager() {
   return null
 }
 
+const serviceOrder = ['films', 'advertising', 'music-videos', 'corporate']
+
+function ServiceIndex() {
+  const [dismissed, setDismissed] = useState(false)
+
+  useEffect(() => {
+    const dismissPreview = (event) => {
+      if (event.key === 'Escape') setDismissed(true)
+    }
+    document.addEventListener('keydown', dismissPreview)
+    return () => document.removeEventListener('keydown', dismissPreview)
+  }, [])
+
+  return (
+    <ul className="service-index" aria-label="Film categories">
+      {serviceOrder.map((id) => {
+        const section = sections.find((item) => item.id === id)
+        return (
+          <li key={id}>
+            <Link
+              className="service-link"
+              to={`/${id}`}
+              data-preview-dismissed={dismissed}
+              onPointerEnter={() => setDismissed(false)}
+              onFocus={() => setDismissed(false)}
+            >
+              <span className="service-label">{section.title}</span>
+              <span className={`service-preview${section.cover ? '' : ' service-preview-empty'}`} aria-hidden="true">
+                {section.cover ? (
+                  <>
+                    <span className="service-preview-image"><PortfolioImage src={section.cover} /></span>
+                    <span className="service-preview-caption">{section.projects[0].name}<span>↗</span></span>
+                  </>
+                ) : <span className="service-preview-note">Corporate work<br />Coming soon ↗</span>}
+              </span>
+            </Link>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
 function Nav() {
   const isHome = useLocation().pathname === '/'
   return (
     <>
-      <nav className="nav">
+      <nav className={`nav${isHome ? ' nav-home' : ''}`} aria-label="Main navigation">
         {isHome ? (
-          <span className="tagline">Films . Advertising . Music Video . Corporate</span>
+          <ServiceIndex />
         ) : (
           <Link className="brand" to="/"><img src={phi} alt="" />The Phi Factor</Link>
         )}

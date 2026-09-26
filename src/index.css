@@ -3,6 +3,7 @@
   --ink: #0D0D0D;
   --brown: #3B2416;
   --font: 'Bebas Neue', 'Oswald', Impact, sans-serif;
+  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
