@@ -1,0 +1,26 @@
+:root {
+  --paper: #E0C6A0;
+  --ink: #0D0D0D;
+  --brown: #3B2416;
+  --font: 'Bebas Neue', 'Oswald', Impact, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* real paper texture from the brand file, tiled */
+body {
+  background-image: url('./assets/paper.jpg');
+  background-size: 1120px auto;
+  background-attachment: fixed;
+}
