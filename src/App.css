@@ -105,7 +105,8 @@
 .footer {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
   gap: 24px;
   padding: 28px 0 40px;
   font-size: 24px;
@@ -228,4 +229,11 @@
   .tile { grid-column: span 1 !important; grid-row: auto !important; }
   .cluster .tile:first-child, .t-text, .cat { grid-column: 1 / -1 !important; }
   .hero-title { flex-wrap: wrap; }
-  
+  .footer { grid-template-columns: 1fr; }
+  .footer .right { text-align: left; }
+  .tagline { display: none; }
+  .nav { font-size: 17px; gap: 12px; align-items: center; }
+  .nav ul { gap: 12px; }
+  .brand { gap: 8px; white-space: nowrap; }
+  .brand img { height: 32px; }
+}
