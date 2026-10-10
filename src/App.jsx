@@ -15,6 +15,8 @@ const homeSpots = {
   films: ['7 / 13', '3 / 5'],
 }
 
+const PHONE = { label: '+91 80882 19356', href: 'tel:+918088219356' }
+
 function ScrollManager() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
@@ -60,7 +62,7 @@ function Footer() {
         </div>
         <div>
           <span className="lbl">Phone</span>
-          <a href="tel:+919535920895">+91 9535920895</a> / <a href="tel:+918618953698">+91 8618953698</a>
+          <a href={PHONE.href}>{PHONE.label}</a>
         </div>
         <div className="right">The Phi Factor</div>
       </footer>
