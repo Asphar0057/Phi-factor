@@ -21,6 +21,11 @@ const layouts = {
     normal: { e: ['1 / 5', '1 / 3'], a: ['5 / 9', '1 / 2'], b: ['9 / 13', '1 / 2'], c: ['5 / 9', '2 / 3'], d: ['9 / 13', '2 / 3'], filler: ['1 / 13', '3 / 4'] },
     flip:   { e: ['9 / 13', '1 / 3'], a: ['1 / 5', '1 / 2'], b: ['5 / 9', '1 / 2'], c: ['1 / 5', '2 / 3'], d: ['5 / 9', '2 / 3'], filler: ['1 / 13', '3 / 4'] },
   },
+  // hero beside 2 stacked + 2 lower
+  M5: {
+    normal: { hero: ['5 / 13', '1 / 3'], s1: ['1 / 5', '1 / 2'], s2: ['1 / 5', '2 / 3'], lowL: ['1 / 6', '3 / 5'], lowR: ['6 / 10', '3 / 5'], filler: ['10 / 13', '3 / 5'] },
+    flip:   { hero: ['1 / 9', '1 / 3'], s1: ['9 / 13', '1 / 2'], s2: ['9 / 13', '2 / 3'], filler: ['1 / 4', '3 / 5'], lowL: ['4 / 8', '3 / 5'], lowR: ['8 / 13', '3 / 5'] },
+  },
 }
 
 const cluster = (type, base, flip = false) => ({ type, base, flip })
@@ -38,8 +43,11 @@ export const sections = [
   {
     id: 'corporate',
     title: 'Corporate',
-    cover: null,
+    cover: '/work/toyo-1-hero.jpg',
     projects: [
+      { id: 'toyo-modec-ofs-india', name: 'Toyo Modec OFS India', kind: 'Corporate', clusters: [cluster('K3', 'toyo-1'), cluster('K3', 'toyo-2', true), cluster('K3', 'toyo-3')] },
+      { id: 'taral', name: 'Taral – Premium Lecture Series', kind: 'Corporate', clusters: [cluster('K3', 'taral-1'), cluster('K3', 'taral-2', true)] },
+      { id: 'anupama-gupta', name: 'Anupama Gupta', kind: 'Corporate', clusters: [cluster('M5', 'anupama')] },
       { id: 'sekoya', name: 'Sekoya', kind: 'Jewellery Brand', clusters: [] },
     ],
   },
