@@ -98,7 +98,6 @@ function Home() {
           <span className="line"><PhiScramble /></span>
           <span className="line"><span className="brand-name">The Phi Factor</span></span>
         </h1>
-        <a className="scroll-cue" href="#about" aria-label="Scroll to who we are">Scroll</a>
       </section>
 
       <section id="about" ref={aboutRef} className={`intro${aboutIn ? ' in' : ''}`}>
