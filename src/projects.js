@@ -68,6 +68,7 @@ export const sections = [
     cover: '/work/chittha-2-hero.jpg',
     projects: [
       { id: 'chittha', name: 'Chittha', kind: 'Indie Film', clusters: [cluster('L4', 'chittha-1'), cluster('L4', 'chittha-2', true)] },
+      { id: 'yuga', name: 'Yuga', kind: 'Indie Film', clusters: [cluster('L4', 'yuga-1'), cluster('L4', 'yuga-2', true)] },
     ],
   },
 ]
