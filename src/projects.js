@@ -27,6 +27,23 @@ const cluster = (type, base, flip = false) => ({ type, base, flip })
 
 export const sections = [
   {
+    id: 'advertising',
+    title: 'Advertising',
+    cover: '/work/coco-1-a.jpg',
+    projects: [
+      { id: 'coco-matcha-club', name: 'Coco Matcha Club', kind: 'Advertisement', clusters: [cluster('P5', 'coco-1'), cluster('P5', 'coco-2', true)] },
+      { id: 'cut-and-style-salons', name: 'Cut & Style Salons', kind: 'Advertisement', clusters: [cluster('P5', 'cs-1'), cluster('P5', 'cs-2', true)] },
+    ],
+  },
+  {
+    id: 'corporate',
+    title: 'Corporate',
+    cover: null,
+    projects: [
+      { id: 'sekoya', name: 'Sekoya', kind: 'Jewellery Brand', clusters: [] },
+    ],
+  },
+  {
     id: 'music-videos',
     title: 'Music Videos',
     cover: '/work/aandhi-1-hero.jpg',
@@ -44,21 +61,6 @@ export const sections = [
     projects: [
       { id: 'chittha', name: 'Chittha', kind: 'Indie Film', clusters: [cluster('L4', 'chittha-1'), cluster('L4', 'chittha-2', true)] },
     ],
-  },
-  {
-    id: 'advertising',
-    title: 'Advertising',
-    cover: '/work/coco-1-a.jpg',
-    projects: [
-      { id: 'coco-matcha-club', name: 'Coco Matcha Club', kind: 'Advertisement', clusters: [cluster('P5', 'coco-1'), cluster('P5', 'coco-2', true)] },
-      { id: 'cut-and-style-salons', name: 'Cut & Style Salons', kind: 'Advertisement', clusters: [cluster('P5', 'cs-1'), cluster('P5', 'cs-2', true)] },
-    ],
-  },
-  {
-    id: 'corporate',
-    title: 'Corporate',
-    cover: null,
-    projects: [],
   },
 ]
 

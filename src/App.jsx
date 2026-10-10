@@ -9,10 +9,10 @@ const pad = (n) => String(n).padStart(2, '0')
 
 // where each category sits in the home bento
 const homeSpots = {
-  'music-videos': ['1 / 8', '1 / 4'],
-  films: ['8 / 13', '1 / 3'],
-  advertising: ['8 / 13', '3 / 4'],
-  corporate: ['1 / 13', '4 / 5'],
+  advertising: ['1 / 8', '1 / 3'],
+  corporate: ['8 / 13', '1 / 3'],
+  'music-videos': ['1 / 7', '3 / 5'],
+  films: ['7 / 13', '3 / 5'],
 }
 
 function ScrollManager() {
@@ -34,7 +34,7 @@ function Nav() {
     <>
       <nav className="nav">
         {isHome ? (
-          <span className="tagline">Films . Advertising . Music Video . Corporate</span>
+          <span className="tagline">Advertising . Corporate . Music Video . Films</span>
         ) : (
           <Link className="brand" to="/"><img src={phi} alt="" />The Phi Factor</Link>
         )}
@@ -151,7 +151,7 @@ function Category() {
       </h1>
 
       {s.projects.length === 0 && (
-        <p className="soon">Corporate work is on its way. In the meantime, <a href="mailto:hello@thephifactor.com">say hello</a>.</p>
+        <p className="soon">{s.title} work is on its way. In the meantime, <a href="mailto:hello@thephifactor.com">say hello</a>.</p>
       )}
 
       {s.projects.length > 1 && (
@@ -170,6 +170,17 @@ function Category() {
         const number = pad(pi + 1)
         return (
           <article className="project" id={p.id} key={p.id}>
+            {p.clusters.length === 0 && (
+              <div className="cluster placeholder">
+                <div className={`tile t-text wide${pi % 2 ? ' alt' : ''}`}>
+                  <div className="tt-top"><span>{p.kind}</span><span>{number}</span></div>
+                  <div className="tt-main">
+                    <strong>{p.name}</strong>
+                    <span className="tt-part">Stills coming soon</span>
+                  </div>
+                </div>
+              </div>
+            )}
             {p.clusters.map((c, i) => (
               <Cluster key={c.base} c={c} project={p} index={i} count={p.clusters.length} number={number} />
             ))}
