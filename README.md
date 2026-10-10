@@ -1,5 +1,9 @@
 # React + Vite
 
+## Portfolio image quality
+
+The portfolio serves untouched original assets without added lossy compression or downsampling. `npm run build` also checks original-file hashes in the production output. See [image quality and source limitations](docs/image-quality.md).
+
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
 Currently, two official plugins are available:

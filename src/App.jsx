@@ -3,6 +3,7 @@ import { Link, Navigate, Route, Routes, useLocation, useParams } from 'react-rou
 import './App.css'
 import phi from './assets/phi.svg'
 import PhiScramble from './PhiScramble'
+import PortfolioImage from './PortfolioImage'
 import { sections, layoutFor, frameSrc } from './projects'
 
 const pad = (n) => String(n).padStart(2, '0')
@@ -49,13 +50,56 @@ function ScrollManager() {
   return null
 }
 
+const serviceOrder = sections.map((s) => s.id)
+
+function ServiceIndex() {
+  const [dismissed, setDismissed] = useState(false)
+
+  useEffect(() => {
+    const dismissPreview = (event) => {
+      if (event.key === 'Escape') setDismissed(true)
+    }
+    document.addEventListener('keydown', dismissPreview)
+    return () => document.removeEventListener('keydown', dismissPreview)
+  }, [])
+
+  return (
+    <ul className="service-index" aria-label="Film categories">
+      {serviceOrder.map((id) => {
+        const section = sections.find((item) => item.id === id)
+        return (
+          <li key={id}>
+            <Link
+              className="service-link"
+              to={`/${id}`}
+              data-preview-dismissed={dismissed}
+              onPointerEnter={() => setDismissed(false)}
+              onFocus={() => setDismissed(false)}
+            >
+              <span className="service-label">{section.title}</span>
+              <span className={`service-preview${section.cover ? '' : ' service-preview-empty'}`} aria-hidden="true">
+                {section.cover ? (
+                  <>
+                    <span className="service-preview-image"><PortfolioImage src={section.cover} /></span>
+                    <span className="service-preview-caption">{section.projects[0].name}<span>↗</span></span>
+                  </>
+                ) : <span className="service-preview-note">{section.title}<br />Coming soon ↗</span>}
+              </span>
+            </Link>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
 function Nav() {
   const isHome = useLocation().pathname === '/'
   return (
     <>
-      <nav className="nav">
+      <nav className={`nav${isHome ? ' nav-home' : ''}`} aria-label="Main navigation">
         {isHome ? (
-          <span className="tagline">Advertising . Corporate . Music Video . Films</span>
+          <ServiceIndex />
         ) : (
           <Link className="brand" to="/"><img src={phi} alt="" />The Phi Factor</Link>
         )}
@@ -122,7 +166,7 @@ function Home() {
                 className={`tile cat${s.cover ? '' : ' empty'}`}
                 style={{ '--c': col, '--r': row }}
               >
-                {s.cover && <img src={s.cover} alt="" loading="lazy" />}
+                {s.cover && <PortfolioImage src={s.cover} />}
                 <span className="cat-count">{count ? `${pad(count)} ${count === 1 ? 'Project' : 'Projects'}` : 'Coming soon'}</span>
                 <strong className="cat-label">{s.title}</strong>
               </Link>
@@ -154,7 +198,7 @@ function Cluster({ c, project, index, count, number }) {
         }
         return (
           <figure key={key} className={`tile${key === 'hero' ? ' hero' : ''}`} style={style}>
-            <img src={frameSrc(c.base, key)} alt={`${project.name} ${project.kind.toLowerCase()} still`} loading="lazy" />
+            <PortfolioImage src={frameSrc(c.base, key)} alt={`${project.name} ${project.kind.toLowerCase()} still`} hero={key === 'hero'} />
           </figure>
         )
       })}
