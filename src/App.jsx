@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import './App.css'
 import phi from './assets/phi.svg'
@@ -16,6 +16,25 @@ const homeSpots = {
 }
 
 const PHONE = { label: '+91 80882 19356', href: 'tel:+918088219356' }
+
+// adds `in` once the element scrolls into view
+function useReveal() {
+  const ref = useRef(null)
+  const [shown, setShown] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el || !('IntersectionObserver' in window)) return setShown(true)
+    const io = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        setShown(true)
+        io.disconnect()
+      }
+    }, { threshold: 0.25 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+  return [ref, shown]
+}
 
 function ScrollManager() {
   const { pathname, hash } = useLocation()
@@ -71,15 +90,19 @@ function Footer() {
 }
 
 function Home() {
+  const [aboutRef, aboutIn] = useReveal()
   return (
     <>
-      <section id="about" className="intro">
-        <p className="eyebrow">Who are we?</p>
-        <h1 className="hero-title">
-          <span className="line"><span>The</span></span>
+      <section className="landing">
+        <h1 className="brandmark">
           <span className="line"><PhiScramble /></span>
-          <span className="line"><span>Factor</span></span>
+          <span className="line"><span className="brand-name">The Phi Factor</span></span>
         </h1>
+        <a className="scroll-cue" href="#about" aria-label="Scroll to who we are">Scroll</a>
+      </section>
+
+      <section id="about" ref={aboutRef} className={`intro${aboutIn ? ' in' : ''}`}>
+        <h2 className="eyebrow">Who are we?</h2>
         <p className="statement">
           At The Phi Factor, we are a collective of obsessed, passionate
           storytellers dedicated to crafting narratives that bring unique
