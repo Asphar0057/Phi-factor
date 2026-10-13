@@ -43,7 +43,7 @@ export const sections = [
   {
     id: 'corporate',
     title: 'Corporate',
-    cover: '/work/toyo-1-hero.jpg',
+    cover: '/work/toyo-1-h1.jpg',
     projects: [
       { id: 'toyo-modec-ofs-india', name: 'Toyo Modec OFS India', kind: 'Corporate', clusters: [cluster('K3', 'toyo-1'), cluster('K3', 'toyo-2', true), cluster('K3', 'toyo-3')] },
       { id: 'taral', name: 'Taral – Premium Lecture Series', kind: 'Corporate', clusters: [cluster('K3', 'taral-1'), cluster('K3', 'taral-2', true)] },
