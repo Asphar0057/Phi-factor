@@ -204,7 +204,7 @@ function Cluster({ c, project, index, count, number }) {
         if (key === 'filler') {
           return (
             <div key={key} className={`tile t-text${index % 2 ? ' alt' : ''}${portrait ? ' wide' : ''}`} style={style}>
-              <div className="tt-top"><span>{project.kind}</span><span>{number}</span></div>
+              <div className="tt-top"><span>{number}</span></div>
               <div className="tt-main">
                 <strong>{project.name}</strong>
                 {count > 1 && <span className="tt-part">{index + 1}/{count}</span>}
@@ -229,7 +229,7 @@ function Category() {
 
   return (
     <section className="bento category">
-      <Link className="back" to="/#work">All work</Link>
+      <Link className="back" to="/#work">back</Link>
       <h1 className="bento-title">
         {s.title}
       </h1>
@@ -244,7 +244,6 @@ function Category() {
             <Link className="work-row" to={`#${p.id}`} key={p.id}>
               <span className="n">{pad(i + 1)}</span>
               <span className="t">{p.name}</span>
-              <span className="k">{p.kind}</span>
             </Link>
           ))}
         </div>
@@ -257,7 +256,7 @@ function Category() {
             {p.clusters.length === 0 && (
               <div className="cluster placeholder">
                 <div className={`tile t-text wide${pi % 2 ? ' alt' : ''}`}>
-                  <div className="tt-top"><span>{p.kind}</span><span>{number}</span></div>
+                  <div className="tt-top"><span>{number}</span></div>
                   <div className="tt-main">
                     <strong>{p.name}</strong>
                     <span className="tt-part">Stills coming soon</span>
