@@ -1,4 +1,5 @@
-import '@fontsource/bebas-neue/400.css'
+import '@fontsource/inter-tight/300.css'
+import '@fontsource/inter-tight/400.css'
 import '@fontsource/fira-sans-extra-condensed/greek-600.css'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'

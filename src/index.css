@@ -2,11 +2,14 @@
   --paper: #E0C6A0;
   --ink: #0D0D0D;
   --brown: #3B2416;
-  --font: 'Bebas Neue', 'Oswald', Impact, sans-serif;
-  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font: 'Inter Tight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: var(--font);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* lowercase, never bold */
+h1, h2, h3, h4, strong, b, th { font-weight: inherit; }
 
 html { scroll-behavior: smooth; scrollbar-gutter: stable; }
 
@@ -14,7 +17,8 @@ body {
   background-color: var(--paper);
   color: var(--ink);
   font-family: var(--font);
-  text-transform: uppercase;
+  font-weight: 400;
+  text-transform: lowercase;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
 }

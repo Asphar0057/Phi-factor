@@ -93,24 +93,40 @@ function ServiceIndex() {
   )
 }
 
-function Nav() {
-  const isHome = useLocation().pathname === '/'
+// on home the header waits until the logo has scrolled away
+function useScrolledPast(enabled) {
+  const [past, setPast] = useState(false)
+  useEffect(() => {
+    if (!enabled) return
+    const check = () => setPast(window.scrollY > window.innerHeight * 0.5)
+    check()
+    window.addEventListener('scroll', check, { passive: true })
+    window.addEventListener('resize', check)
+    return () => {
+      window.removeEventListener('scroll', check)
+      window.removeEventListener('resize', check)
+    }
+  }, [enabled])
+  return past
+}
+
+function Nav({ isHome, shown }) {
   return (
-    <>
-      <nav className={`nav${isHome ? ' nav-home' : ''}`} aria-label="Main navigation">
-        {isHome ? (
-          <ServiceIndex />
-        ) : (
-          <Link className="brand" to="/"><img src={phi} alt="" />The Phi Factor</Link>
-        )}
-        <ul>
+    <header
+      className={`site-header${isHome ? ' is-home' : ''}${isHome && !shown ? ' is-hidden' : ''}`}
+      inert={isHome && !shown ? true : undefined}
+    >
+      <nav className="nav" aria-label="Main navigation">
+        <Link className="brand" to="/"><img src={phi} alt="" />the phi factor</Link>
+        <ServiceIndex />
+        <ul className="nav-links">
           <li><Link to="/#about">About</Link></li>
           <li><Link to="/#work">Work</Link></li>
           <li><Link to="/#contact">Contact</Link></li>
         </ul>
       </nav>
       <hr className="rule" />
-    </>
+    </header>
   )
 }
 
@@ -140,7 +156,7 @@ function Home() {
       <section className="landing">
         <h1 className="brandmark">
           <span className="line"><PhiScramble /></span>
-          <span className="line"><span className="brand-name">The Phi Factor</span></span>
+          <span className="sr-only">the phi factor</span>
         </h1>
       </section>
 
@@ -260,11 +276,15 @@ function Category() {
 }
 
 export default function App() {
+  const isHome = useLocation().pathname === '/'
+  const scrolled = useScrolledPast(isHome)
+  // on home, only the centred logo shows until you scroll
+  const revealed = !isHome || scrolled
   return (
-    <main className="page" id="top">
+    <main className={`page${revealed ? '' : ' at-landing'}`} id="top">
       <img className="watermark" src={phi} alt="" aria-hidden="true" />
       <ScrollManager />
-      <Nav />
+      <Nav isHome={isHome} shown={scrolled} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:slug" element={<Category />} />
