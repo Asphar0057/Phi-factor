@@ -34,7 +34,7 @@ export const sections = [
   {
     id: 'advertising',
     title: 'Advertising',
-    cover: '/work/coco-1-a.jpg',
+    cover: '/work/sekoya-2-d.jpg',
     projects: [
       { id: 'sekoya', name: 'Sekoya', kind: 'Jewellery Brand', clusters: [cluster('P5', 'sekoya-2'), cluster('P5', 'sekoya-1', true)] },
       { id: 'cut-and-style-salons', name: 'Cut & Style Salons', kind: 'Advertisement', clusters: [cluster('P5', 'cs-1'), cluster('P5', 'cs-2', true)] },
@@ -44,7 +44,7 @@ export const sections = [
   {
     id: 'corporate',
     title: 'Corporate',
-    cover: '/work/toyo-1-h1.jpg',
+    cover: '/work/toyo-2-hero.jpg',
     projects: [
       { id: 'toyo-modec-ofs-india', name: 'Toyo Modec OFS India', kind: 'Corporate', clusters: [cluster('K3', 'toyo-1'), cluster('K3', 'toyo-2', true), cluster('K3', 'toyo-3')] },
       { id: 'taral', name: 'Taral – Premium Lecture Series', kind: 'Corporate', clusters: [cluster('K3', 'taral-1'), cluster('K3', 'taral-2', true)] },
@@ -54,7 +54,7 @@ export const sections = [
   {
     id: 'music-videos',
     title: 'Music Videos',
-    cover: '/work/aandhi-1-hero.jpg',
+    cover: '/work/kamagaari-2-h1.jpg',
     projects: [
       { id: 'kamagaari', name: 'Kamagaari', kind: 'Music Video', clusters: [cluster('K3', 'kamagaari-1'), cluster('K3', 'kamagaari-2', true)] },
       { id: 'meghave', name: 'Meghave', kind: 'Music Video', clusters: [cluster('L4', 'meghave-1'), cluster('L4', 'meghave-2', true)] },
@@ -64,7 +64,7 @@ export const sections = [
   {
     id: 'films',
     title: 'Films',
-    cover: '/work/chittha-2-hero.jpg',
+    cover: '/work/chittha-1-hero.jpg',
     projects: [
       { id: 'chittha', name: 'Chittha', kind: 'Indie Film', clusters: [cluster('L4', 'chittha-1'), cluster('L4', 'chittha-2', true)] },
     ],

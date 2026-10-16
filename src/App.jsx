@@ -207,7 +207,7 @@ function Nav({ isHome, shown }) {
       inert={isHome && !shown ? true : undefined}
     >
       <nav className="nav" aria-label="Main navigation">
-        <Link className="brand" to="/"><img src={phi} alt="" />the phi factor</Link>
+        <Link className="brand" to="/" aria-label="The Phi Factor home"><img src={phi} alt="" /></Link>
         <ServiceIndex />
         <ul className="nav-links">
           <li><Link to="/#about">About</Link></li>
