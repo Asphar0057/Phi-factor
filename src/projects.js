@@ -36,6 +36,7 @@ export const sections = [
     title: 'Advertising',
     cover: '/work/coco-1-a.jpg',
     projects: [
+      { id: 'sekoya', name: 'Sekoya', kind: 'Jewellery Brand', clusters: [cluster('P5', 'sekoya-1'), cluster('P5', 'sekoya-2', true)] },
       { id: 'coco-matcha-club', name: 'Coco Matcha Club', kind: 'Advertisement', clusters: [cluster('P5', 'coco-1'), cluster('P5', 'coco-2', true)] },
       { id: 'cut-and-style-salons', name: 'Cut & Style Salons', kind: 'Advertisement', clusters: [cluster('P5', 'cs-1'), cluster('P5', 'cs-2', true)] },
     ],
@@ -48,7 +49,6 @@ export const sections = [
       { id: 'toyo-modec-ofs-india', name: 'Toyo Modec OFS India', kind: 'Corporate', clusters: [cluster('K3', 'toyo-1'), cluster('K3', 'toyo-2', true), cluster('K3', 'toyo-3')] },
       { id: 'taral', name: 'Taral – Premium Lecture Series', kind: 'Corporate', clusters: [cluster('K3', 'taral-1'), cluster('K3', 'taral-2', true)] },
       { id: 'anupama-gupta', name: 'Anupama Gupta', kind: 'Corporate', clusters: [cluster('M5', 'anupama')] },
-      { id: 'sekoya', name: 'Sekoya', kind: 'Jewellery Brand', clusters: [] },
     ],
   },
   {
@@ -56,10 +56,9 @@ export const sections = [
     title: 'Music Videos',
     cover: '/work/aandhi-1-hero.jpg',
     projects: [
-      { id: 'aandhi', name: 'Aandhi', kind: 'Music Video', clusters: [cluster('L4', 'aandhi-1'), cluster('L4', 'aandhi-2', true)] },
-      { id: 'heguruve', name: 'Heguruve', kind: 'Music Video', clusters: [cluster('H6', 'heguruve')] },
       { id: 'kamagaari', name: 'Kamagaari', kind: 'Music Video', clusters: [cluster('K3', 'kamagaari-1'), cluster('K3', 'kamagaari-2', true)] },
       { id: 'meghave', name: 'Meghave', kind: 'Music Video', clusters: [cluster('L4', 'meghave-1'), cluster('L4', 'meghave-2', true)] },
+      { id: 'aandhi', name: 'Aandhi', kind: 'Music Video', clusters: [cluster('L4', 'aandhi-1'), cluster('L4', 'aandhi-2', true)] },
     ],
   },
   {
@@ -68,7 +67,6 @@ export const sections = [
     cover: '/work/chittha-2-hero.jpg',
     projects: [
       { id: 'chittha', name: 'Chittha', kind: 'Indie Film', clusters: [cluster('L4', 'chittha-1'), cluster('L4', 'chittha-2', true)] },
-      { id: 'yuga', name: 'Yuga', kind: 'Indie Film', clusters: [cluster('L4', 'yuga-1'), cluster('L4', 'yuga-2', true)] },
     ],
   },
 ]

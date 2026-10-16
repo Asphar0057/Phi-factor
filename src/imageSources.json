@@ -395,72 +395,6 @@
       1490
     ]
   },
-  "/work/heguruve-hero.jpg": {
-    "src": "/work/originals/heguruve.png",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      671,
-      4,
-      1424,
-      909
-    ]
-  },
-  "/work/heguruve-l1.jpg": {
-    "src": "/work/originals/heguruve.png",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      4,
-      4,
-      650,
-      479
-    ]
-  },
-  "/work/heguruve-l2.jpg": {
-    "src": "/work/originals/heguruve.png",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      4,
-      500,
-      650,
-      479
-    ]
-  },
-  "/work/heguruve-l3.jpg": {
-    "src": "/work/originals/heguruve.png",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      4,
-      995,
-      650,
-      499
-    ]
-  },
-  "/work/heguruve-lowL.jpg": {
-    "src": "/work/originals/heguruve.png",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      671,
-      930,
-      652,
-      564
-    ]
-  },
-  "/work/heguruve-lowR.jpg": {
-    "src": "/work/originals/heguruve.png",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      1340,
-      930,
-      755,
-      564
-    ]
-  },
   "/work/kamagaari-1-h1.jpg": {
     "src": "/work/originals/kamagaari-1-h1.png",
     "width": 3838,
@@ -629,94 +563,6 @@
       62,
       3769,
       1372
-    ]
-  },
-  "/work/yuga-1-hero.jpg": {
-    "src": "/work/originals/yuga-1.jpg",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      6,
-      6,
-      2088,
-      860
-    ]
-  },
-  "/work/yuga-1-big.jpg": {
-    "src": "/work/originals/yuga-1.jpg",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      6,
-      879,
-      1273,
-      532
-    ]
-  },
-  "/work/yuga-1-s1.jpg": {
-    "src": "/work/originals/yuga-1.jpg",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      1291,
-      879,
-      803,
-      286
-    ]
-  },
-  "/work/yuga-1-s2.jpg": {
-    "src": "/work/originals/yuga-1.jpg",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      1291,
-      1177,
-      803,
-      234
-    ]
-  },
-  "/work/yuga-2-hero.jpg": {
-    "src": "/work/originals/yuga-2.jpg",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      6,
-      6,
-      2088,
-      843
-    ]
-  },
-  "/work/yuga-2-big.jpg": {
-    "src": "/work/originals/yuga-2.jpg",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      6,
-      867,
-      1292,
-      627
-    ]
-  },
-  "/work/yuga-2-s1.jpg": {
-    "src": "/work/originals/yuga-2.jpg",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      1310,
-      861,
-      784,
-      316
-    ]
-  },
-  "/work/yuga-2-s2.jpg": {
-    "src": "/work/originals/yuga-2.jpg",
-    "width": 2100,
-    "height": 1500,
-    "crop": [
-      1310,
-      1189,
-      784,
-      305
     ]
   },
   "/work/toyo-1-hero.jpg": {
@@ -937,6 +783,116 @@
       837,
       1070,
       657
+    ]
+  },
+  "/work/sekoya-1-a.jpg": {
+    "src": "/work/originals/sekoya-1298.jpg",
+    "width": 4032,
+    "height": 6048,
+    "crop": [
+      0,
+      1500,
+      4032,
+      2880
+    ]
+  },
+  "/work/sekoya-1-b.jpg": {
+    "src": "/work/originals/sekoya-1251.jpg",
+    "width": 4032,
+    "height": 6048,
+    "crop": [
+      0,
+      1280,
+      4032,
+      2880
+    ]
+  },
+  "/work/sekoya-1-c.jpg": {
+    "src": "/work/originals/sekoya-1353.jpg",
+    "width": 4032,
+    "height": 6048,
+    "crop": [
+      0,
+      900,
+      4032,
+      2880
+    ]
+  },
+  "/work/sekoya-1-d.jpg": {
+    "src": "/work/originals/sekoya-1457.jpg",
+    "width": 4032,
+    "height": 6048,
+    "crop": [
+      0,
+      1584,
+      4032,
+      2880
+    ]
+  },
+  "/work/sekoya-1-e.jpg": {
+    "src": "/work/originals/sekoya-1484.jpg",
+    "width": 4032,
+    "height": 6048,
+    "crop": [
+      0,
+      0,
+      4032,
+      6048
+    ]
+  },
+  "/work/sekoya-2-a.jpg": {
+    "src": "/work/originals/sekoya-1173.jpg",
+    "width": 4032,
+    "height": 6048,
+    "crop": [
+      0,
+      1900,
+      4032,
+      2880
+    ]
+  },
+  "/work/sekoya-2-b.jpg": {
+    "src": "/work/originals/sekoya-1178.jpg",
+    "width": 4032,
+    "height": 6048,
+    "crop": [
+      0,
+      1300,
+      4032,
+      2880
+    ]
+  },
+  "/work/sekoya-2-c.jpg": {
+    "src": "/work/originals/sekoya-1549.jpg",
+    "width": 4032,
+    "height": 6048,
+    "crop": [
+      0,
+      1300,
+      4032,
+      2880
+    ]
+  },
+  "/work/sekoya-2-d.jpg": {
+    "src": "/work/originals/sekoya-1701.jpg",
+    "width": 4032,
+    "height": 6048,
+    "crop": [
+      0,
+      1900,
+      4032,
+      2880
+    ]
+  },
+  "/work/sekoya-2-e.jpg": {
+    "src": "/work/originals/sekoya-1607.jpg",
+    "width": 4032,
+    "height": 6048,
+    "crop": [
+      0,
+      0,
+      4032,
+      6048
     ]
   }
 }

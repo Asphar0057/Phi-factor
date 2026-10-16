@@ -67,6 +67,9 @@ function ServiceIndex() {
     <ul className="service-index" aria-label="Film categories">
       {serviceOrder.map((id) => {
         const section = sections.find((item) => item.id === id)
+        // caption the project the cover still actually comes from
+        const coverProject = section.projects.find((p) =>
+          p.clusters.some((c) => section.cover?.startsWith(`/work/${c.base}-`))) ?? section.projects[0]
         return (
           <li key={id}>
             <Link
@@ -81,7 +84,7 @@ function ServiceIndex() {
                 {section.cover ? (
                   <>
                     <span className="service-preview-image"><PortfolioImage src={section.cover} /></span>
-                    <span className="service-preview-caption">{section.projects[0].name}<span>›</span></span>
+                    <span className="service-preview-caption">{coverProject?.name}<span>›</span></span>
                   </>
                 ) : <span className="service-preview-note">{section.title}<br />Coming soon ›</span>}
               </span>

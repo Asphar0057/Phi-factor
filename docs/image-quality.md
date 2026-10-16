@@ -3,7 +3,8 @@
 Portfolio images use original files from the supplied [Drive folder](https://drive.google.com/drive/folders/1hpYbxBng5KZ1ZkHlq_gjj4gV-ILMytJL).
 
 - `public/work/originals/` contains untouched source PNGs. There is no JPEG conversion, resizing, sharpening, AI upscaling, or image CDN transformation.
-- Yuga and the corporate projects (Toyo Modec OFS India, Taral, Anupama Gupta) exist only as pages of `PORTFOLIO PHI FACTOR 2.pdf`. Their originals are the JPEG page images embedded in that PDF, extracted byte-for-byte without re-encoding.
+- The corporate projects (Toyo Modec OFS India, Taral, Anupama Gupta) exist only as pages of `PORTFOLIO PHI FACTOR 2.pdf`. Their originals are the JPEG page images embedded in that PDF, extracted byte-for-byte without re-encoding.
+- Sekoya uses untouched camera JPEGs (6048 × 4032, EXIF-rotated to portrait) from the [Sekoya Shoot folder](https://drive.google.com/drive/folders/1NOgOiz_rIxGmkkRONLYLTuS3ARVZNUbG); dimensions and crops are recorded in the displayed (portrait) orientation.
 - `src/imageSources.json` maps the existing portfolio image identifiers to originals and crop rectangles in source pixels.
 - `PortfolioImage.jsx` displays each crop through an SVG viewport. Cropping happens only at display time; the file and its pixels remain unchanged. Images outside the viewport load as the visitor approaches them.
 - Individual high-resolution stills are preferred when they match the existing scene. Where the supplied material is a collage, the original collage is shared between its tiles and downloaded once by the browser. Titles on individual hero stills are rendered as text rather than baked into a new image.

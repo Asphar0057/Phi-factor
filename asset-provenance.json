@@ -58,13 +58,6 @@
       "sha256": "89c6c60eb3893b2a88127da7247f63beb15200b98073dbfbfb27623f8bb0db05"
     },
     {
-      "path": "/work/originals/heguruve.png",
-      "source": "TEXTURE USED/heguruve.png",
-      "width": 2100,
-      "height": 1500,
-      "sha256": "95ff0870008cc920446451e2802d0c857fc578a1075474465cffa71f554633f1"
-    },
-    {
       "path": "/work/originals/kamagaari-1-h1.png",
       "source": "kamagaari music video/Screenshot 2024-10-12 at 6.10.18 AM.png",
       "width": 3838,
@@ -163,20 +156,6 @@
       "sha256": "54e7984de6b6c7e0c280d3e631a5081d3520e87234da5c115c40eaa66ca09cac"
     },
     {
-      "path": "/work/originals/yuga-1.jpg",
-      "source": "TEXTURE USED/PORTFOLIO PHI FACTOR 2.pdf (Portfolio page 8, embedded JPEG, extracted byte-for-byte)",
-      "width": 2100,
-      "height": 1500,
-      "sha256": "da951f9d86e3da36b68bd6be0871721ea9d21b4641de269fee6e671bc901970b"
-    },
-    {
-      "path": "/work/originals/yuga-2.jpg",
-      "source": "TEXTURE USED/PORTFOLIO PHI FACTOR 2.pdf (Portfolio page 9, embedded JPEG, extracted byte-for-byte)",
-      "width": 2100,
-      "height": 1500,
-      "sha256": "0462889dc6f69434ebdbf4ce68ff3d70d9b015a87da0d5084092065ee97eb528"
-    },
-    {
       "path": "/work/originals/toyo-1.jpg",
       "source": "TEXTURE USED/PORTFOLIO PHI FACTOR 2.pdf (Portfolio page 24, embedded JPEG, extracted byte-for-byte)",
       "width": 2100,
@@ -217,6 +196,76 @@
       "width": 2100,
       "height": 1500,
       "sha256": "e0a109c54e6cd1c5930f1584245a1b4005805b19c0f04bbee91d4a397a25dbed"
+    },
+    {
+      "path": "/work/originals/sekoya-1484.jpg",
+      "source": "Sekoya Shoot/DSC_1484.JPG",
+      "width": 4032,
+      "height": 6048,
+      "sha256": "28c6bf25fb66f83f3c3bd2e7150ea5969b372b9e2f9b64ab88b5bd79c180b4e2"
+    },
+    {
+      "path": "/work/originals/sekoya-1298.jpg",
+      "source": "Sekoya Shoot/DSC_1298.JPG",
+      "width": 4032,
+      "height": 6048,
+      "sha256": "edd8a1be7ba2e64a69ff9dfa07dfe0f96e08b88638372ca372b4cd8a13501c13"
+    },
+    {
+      "path": "/work/originals/sekoya-1251.jpg",
+      "source": "Sekoya Shoot/DSC_1251.JPG",
+      "width": 4032,
+      "height": 6048,
+      "sha256": "2cf7193ae9729609d2006d329200a66120c568c0d41be2ee94ba1a44070210f7"
+    },
+    {
+      "path": "/work/originals/sekoya-1353.jpg",
+      "source": "Sekoya Shoot/DSC_1353.JPG",
+      "width": 4032,
+      "height": 6048,
+      "sha256": "7618f17fb837eba7c9b157bb4f8baff224912c8b93061a736c70ae428f050351"
+    },
+    {
+      "path": "/work/originals/sekoya-1457.jpg",
+      "source": "Sekoya Shoot/DSC_1457.JPG",
+      "width": 4032,
+      "height": 6048,
+      "sha256": "ab001aae7e03f6ee4aa62cae3bc0774c9d4af28d3d7ae85f72ce61cc8f42ca96"
+    },
+    {
+      "path": "/work/originals/sekoya-1607.jpg",
+      "source": "Sekoya Shoot/DSC_1607.JPG",
+      "width": 4032,
+      "height": 6048,
+      "sha256": "15ba0421d650193bd2fa8e75b499693bd2acdbde70436844a53ae38551164f16"
+    },
+    {
+      "path": "/work/originals/sekoya-1173.jpg",
+      "source": "Sekoya Shoot/DSC_1173.JPG",
+      "width": 4032,
+      "height": 6048,
+      "sha256": "2c738407f415685f85039835c1aaa2da657d7c72eef8efd0344442d8ab687436"
+    },
+    {
+      "path": "/work/originals/sekoya-1178.jpg",
+      "source": "Sekoya Shoot/DSC_1178.JPG",
+      "width": 4032,
+      "height": 6048,
+      "sha256": "9727485683674219fc404c8f41c5499d3410a5c48741e0aef7441e9b86be3556"
+    },
+    {
+      "path": "/work/originals/sekoya-1549.jpg",
+      "source": "Sekoya Shoot/DSC_1549.JPG",
+      "width": 4032,
+      "height": 6048,
+      "sha256": "9dbb666a78d242e399f0fc468ebeb81078c202d70ac2d404944b452028f5561a"
+    },
+    {
+      "path": "/work/originals/sekoya-1701.jpg",
+      "source": "Sekoya Shoot/DSC_1701.JPG",
+      "width": 4032,
+      "height": 6048,
+      "sha256": "d323f08ae892095acd0ac811d095ad40d183e9a7ffc28259bb28fecb6da0aa59"
     }
   ]
 }
