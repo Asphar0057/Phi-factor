@@ -36,9 +36,9 @@ export const sections = [
     title: 'Advertising',
     cover: '/work/coco-1-a.jpg',
     projects: [
-      { id: 'sekoya', name: 'Sekoya', kind: 'Jewellery Brand', clusters: [cluster('P5', 'sekoya-1'), cluster('P5', 'sekoya-2', true)] },
-      { id: 'coco-matcha-club', name: 'Coco Matcha Club', kind: 'Advertisement', clusters: [cluster('P5', 'coco-1'), cluster('P5', 'coco-2', true)] },
+      { id: 'sekoya', name: 'Sekoya', kind: 'Jewellery Brand', clusters: [cluster('P5', 'sekoya-2'), cluster('P5', 'sekoya-1', true)] },
       { id: 'cut-and-style-salons', name: 'Cut & Style Salons', kind: 'Advertisement', clusters: [cluster('P5', 'cs-1'), cluster('P5', 'cs-2', true)] },
+      { id: 'coco-matcha-club', name: 'The Coco Club', kind: 'Advertisement', clusters: [cluster('P5', 'coco-1'), cluster('P5', 'coco-2', true)] },
     ],
   },
   {
@@ -48,7 +48,7 @@ export const sections = [
     projects: [
       { id: 'toyo-modec-ofs-india', name: 'Toyo Modec OFS India', kind: 'Corporate', clusters: [cluster('K3', 'toyo-1'), cluster('K3', 'toyo-2', true), cluster('K3', 'toyo-3')] },
       { id: 'taral', name: 'Taral – Premium Lecture Series', kind: 'Corporate', clusters: [cluster('K3', 'taral-1'), cluster('K3', 'taral-2', true)] },
-      { id: 'anupama-gupta', name: 'Anupama Gupta', kind: 'Corporate', clusters: [cluster('M5', 'anupama')] },
+      { id: 'anupma-gupta', name: 'Anupma Gupta', kind: 'Corporate', clusters: [cluster('M5', 'anupama')] },
     ],
   },
   {

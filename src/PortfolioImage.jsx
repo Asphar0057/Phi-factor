@@ -24,8 +24,6 @@ export default function PortfolioImage({ src, alt = '', hero = false, eager = fa
 
   if (!source) return <img src={src} alt={alt} loading={eager ? 'eager' : 'lazy'} />
 
-  const [x, y, width, height] = source.crop
-
   return (
     <svg
       ref={viewport}
@@ -38,16 +36,6 @@ export default function PortfolioImage({ src, alt = '', hero = false, eager = fa
       focusable="false"
     >
       {visible && <image href={source.src} width={source.width} height={source.height} />}
-      {visible && source.label && (
-        <g fill="white" fontFamily="monospace" fontStyle="italic" fontWeight="bold" textAnchor="end" aria-hidden="true">
-          <text x={x + width * 0.975} y={y + height * 0.895} fontSize={width * 0.025}>
-            / {source.label[0].toUpperCase()}
-          </text>
-          <text x={x + width * 0.975} y={y + height * 0.955} fontSize={width * 0.012}>
-            {source.label[1].toUpperCase()}
-          </text>
-        </g>
-      )}
     </svg>
   )
 }

@@ -18,25 +18,6 @@ const homeSpots = {
 
 const PHONE = { label: '+91 80882 19356', href: 'tel:+918088219356' }
 
-// adds `in` once the element scrolls into view
-function useReveal() {
-  const ref = useRef(null)
-  const [shown, setShown] = useState(false)
-  useEffect(() => {
-    const el = ref.current
-    if (!el || !('IntersectionObserver' in window)) return setShown(true)
-    const io = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) {
-        setShown(true)
-        io.disconnect()
-      }
-    }, { threshold: 0.25 })
-    io.observe(el)
-    return () => io.disconnect()
-  }, [])
-  return [ref, shown]
-}
-
 function ScrollManager() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
@@ -101,7 +82,10 @@ function useScrolledPast(enabled) {
   const [past, setPast] = useState(false)
   useEffect(() => {
     if (!enabled) return
-    const check = () => setPast(window.scrollY > window.innerHeight * 0.5)
+    const check = () => {
+      const landing = document.querySelector('.landing')
+      setPast(landing ? landing.getBoundingClientRect().bottom < window.innerHeight * 0.5 : false)
+    }
     check()
     window.addEventListener('scroll', check, { passive: true })
     window.addEventListener('resize', check)
@@ -111,6 +95,109 @@ function useScrolledPast(enabled) {
     }
   }, [enabled])
   return past
+}
+
+function useLandingReveal() {
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const landing = ref.current
+    if (!landing) return
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    let frame = 0
+
+    const update = () => {
+      frame = 0
+      const travel = Math.min(140, Math.max(60, window.innerWidth * 0.1))
+      const lift = Math.min(64, Math.max(24, window.innerHeight * 0.055))
+      const distance = Math.max(1, (landing.offsetHeight - window.innerHeight) * 0.75)
+      const progress = reduceMotion.matches
+        ? 1
+        : Math.min(1, Math.max(0, -landing.getBoundingClientRect().top / distance))
+      const reveal = 1 - (1 - progress) ** 3
+
+      landing.style.setProperty('--name-opacity', reveal.toFixed(3))
+      landing.style.setProperty('--name-offset', `${((1 - reveal) * travel).toFixed(1)}px`)
+      landing.style.setProperty('--logo-offset', `${(-reveal * lift).toFixed(1)}px`)
+    }
+
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(update)
+    }
+
+    update()
+    window.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
+    reduceMotion.addEventListener('change', schedule)
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', schedule)
+      window.removeEventListener('resize', schedule)
+      reduceMotion.removeEventListener('change', schedule)
+    }
+  }, [])
+
+  return ref
+}
+
+function useScrollFades() {
+  const aboutHeadingRef = useRef(null)
+  const aboutTextRef = useRef(null)
+  const workHeadingRef = useRef(null)
+  const workCardsRef = useRef(null)
+
+  useEffect(() => {
+    const aboutHeading = aboutHeadingRef.current
+    const aboutText = aboutTextRef.current
+    const workHeading = workHeadingRef.current
+    const workCards = workCardsRef.current
+    if (!aboutHeading || !aboutText || !workHeading || !workCards) return
+
+    const groups = [
+      { trigger: aboutHeading, elements: [aboutHeading, aboutText] },
+      { trigger: workHeading, elements: [workHeading, workCards] },
+    ]
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    let frame = 0
+
+    const update = () => {
+      frame = 0
+      const start = window.innerHeight * 0.95
+      const end = window.innerHeight * 0.25
+      const travel = Math.min(80, Math.max(48, window.innerWidth * 0.055))
+
+      groups.forEach(({ trigger, elements }) => {
+        const top = trigger.offsetParent.getBoundingClientRect().top + trigger.offsetTop
+        const progress = reduceMotion.matches
+          ? 1
+          : Math.min(1, Math.max(0, (start - top) / (start - end)))
+        const reveal = progress * progress * (3 - 2 * progress)
+        elements.forEach((element) => {
+          element.style.setProperty('--fade-opacity', reveal.toFixed(3))
+          element.style.setProperty('--fade-offset', `${((1 - reveal) * travel).toFixed(1)}px`)
+        })
+      })
+    }
+
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(update)
+    }
+
+    update()
+    window.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
+    reduceMotion.addEventListener('change', schedule)
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', schedule)
+      window.removeEventListener('resize', schedule)
+      reduceMotion.removeEventListener('change', schedule)
+    }
+  }, [])
+
+  return { aboutHeadingRef, aboutTextRef, workHeadingRef, workCardsRef }
 }
 
 function Nav({ isHome, shown }) {
@@ -153,19 +240,22 @@ function Footer() {
 }
 
 function Home() {
-  const [aboutRef, aboutIn] = useReveal()
+  const landingRef = useLandingReveal()
+  const { aboutHeadingRef, aboutTextRef, workHeadingRef, workCardsRef } = useScrollFades()
   return (
     <>
-      <section className="landing">
-        <h1 className="brandmark">
-          <span className="line"><PhiScramble /></span>
-          <span className="sr-only">the phi factor</span>
-        </h1>
+      <section ref={landingRef} className="landing">
+        <div className="landing-stage">
+          <h1 className="brandmark">
+            <span className="line logo-line"><PhiScramble /></span>
+            <span className="line name-line"><span className="brand-name">The Phi Factor</span></span>
+          </h1>
+        </div>
       </section>
 
-      <section id="about" ref={aboutRef} className={`intro${aboutIn ? ' in' : ''}`}>
-        <h2 className="eyebrow">Who are we?</h2>
-        <p className="statement">
+      <section id="about" className="intro">
+        <h2 ref={aboutHeadingRef} className="eyebrow scroll-fade">Who are we?</h2>
+        <p ref={aboutTextRef} className="statement scroll-fade">
           At The Phi Factor, we are a collective of obsessed, passionate
           storytellers dedicated to crafting narratives that bring unique
           stories to life. With your permission, we’d love to tell your story!
@@ -173,8 +263,8 @@ function Home() {
       </section>
 
       <section id="work" className="home-work">
-        <h2 className="bento-title">Work</h2>
-        <div className="cluster home-bento">
+        <h2 ref={workHeadingRef} className="bento-title scroll-fade">Work</h2>
+        <div ref={workCardsRef} className="cluster home-bento scroll-fade">
           {sections.map((s) => {
             const [col, row] = homeSpots[s.id]
             const count = s.projects.length

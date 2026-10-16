@@ -17,7 +17,7 @@
     "crop": [
       4,
       5,
-      2091,
+      1690,
       862
     ]
   },
@@ -61,7 +61,7 @@
     "crop": [
       4,
       5,
-      2091,
+      1690,
       862
     ]
   },
@@ -426,10 +426,6 @@
       132,
       3824,
       1603
-    ],
-    "label": [
-      "Kamagaari",
-      "Music video"
     ]
   },
   "/work/kamagaari-2-h1.jpg": {
@@ -463,10 +459,6 @@
       7,
       3824,
       1590
-    ],
-    "label": [
-      "Kamagaari",
-      "Music video"
     ]
   },
   "/work/meghave-1-big.jpg": {
@@ -489,10 +481,6 @@
       8,
       3832,
       1568
-    ],
-    "label": [
-      "Meghave",
-      "Music video"
     ]
   },
   "/work/meghave-1-s1.jpg": {
@@ -537,10 +525,6 @@
       0,
       3824,
       1590
-    ],
-    "label": [
-      "Meghave",
-      "Music video"
     ]
   },
   "/work/meghave-2-s1.jpg": {

@@ -3,7 +3,6 @@ import phi from './assets/phi.svg'
 
 // every capital in the Greek alphabet except Phi, which is where we land
 const GREEK = 'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΧΨΩ'.split('')
-const STEP_MS = 42
 
 const shuffled = () => {
   const a = [...GREEK]
@@ -23,26 +22,38 @@ export default function PhiScramble() {
   const running = useRef(false)
 
   const play = useCallback(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setGlyph(null)
+      return
+    }
     if (running.current) return
     running.current = true
     const seq = shuffled()
     let i = 0
-    timer.current = setInterval(() => {
+
+    const advance = () => {
       if (i < seq.length) {
-        setGlyph(seq[i++])
+        setGlyph(seq[i])
+        const progress = i / (seq.length - 1)
+        const delay = 52 + Math.round(70 * progress ** 3)
+        i += 1
+        timer.current = setTimeout(advance, delay)
       } else {
-        clearInterval(timer.current)
         setGlyph(null)
+        timer.current = null
         running.current = false
       }
-    }, STEP_MS)
+    }
+
+    timer.current = setTimeout(advance, 0)
   }, [])
 
   useEffect(() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (!reduce) play() // one flourish on load
+    const startTimer = reduce ? null : setTimeout(play, 0) // one flourish on load
     return () => {
-      clearInterval(timer.current)
+      clearTimeout(startTimer)
+      clearTimeout(timer.current)
       running.current = false
     }
   }, [play])
