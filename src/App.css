@@ -248,7 +248,7 @@
   padding: 28px 0 40px;
   font-size: 18px;
 }
-.footer .lbl { display: block; opacity: 0.6; font-size: 14px; padding-bottom: 4px; }
+.footer .lbl { display: block; opacity: 0.6; font-size: 14px; padding-bottom: 2px; }
 .footer a { color: inherit; text-decoration: none; }
 .footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
@@ -393,7 +393,7 @@
 .nav .nav-links { gap: clamp(18px, 2.5vw, 32px); }
 .back { min-width: 44px; min-height: 44px; text-align: right; }
 .footer { scroll-margin-top: 100px; padding-bottom: max(40px, env(safe-area-inset-bottom)); }
-.footer a { display: inline-flex; align-items: center; min-height: 44px; overflow-wrap: anywhere; max-width: 100%; }
+.footer a { display: inline-flex; align-items: flex-start; min-height: 44px; overflow-wrap: anywhere; max-width: 100%; }
 .work-row { grid-template-columns: 32px minmax(0, 1fr); gap: 16px; }
 .work-row .n { grid-column: 1; }
 .work-row .t { grid-column: 2; overflow-wrap: anywhere; }
