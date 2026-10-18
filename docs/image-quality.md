@@ -7,7 +7,7 @@ Portfolio images use original files from the supplied [Drive folder](https://dri
 - Sekoya uses untouched camera JPEGs (6048 × 4032, EXIF-rotated to portrait) from the [Sekoya Shoot folder](https://drive.google.com/drive/folders/1NOgOiz_rIxGmkkRONLYLTuS3ARVZNUbG); dimensions and crops are recorded in the displayed (portrait) orientation.
 - `src/imageSources.json` maps the existing portfolio image identifiers to originals and crop rectangles in source pixels.
 - `PortfolioImage.jsx` displays each crop through an SVG viewport. Cropping happens only at display time; the file and its pixels remain unchanged. Images outside the viewport load as the visitor approaches them.
-- Individual high-resolution stills are preferred when they match the existing scene. Where the supplied material is a collage, the original collage is shared between its tiles and downloaded once by the browser. Titles on individual hero stills are rendered as text rather than baked into a new image.
+- Individual high-resolution stills are preferred when they match the existing scene. Where the supplied material is a collage, the original collage is shared between its tiles and downloaded once by the browser. Display crops exclude baked-in project captions; project names remain in the separate text tiles. The same caption-free crops apply to gallery images, home covers, and navigation previews.
 - `asset-provenance.json` records original filenames, dimensions, and SHA-256 hashes. `npm run build` verifies that every portfolio tile has a source and that both the source and built image bytes match the imported original.
 
 ## Source limitations

@@ -18,3 +18,31 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the Oxlint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+
+## Responsive browser checks
+
+Install the test browsers once, then run the suite:
+
+```sh
+npx playwright install chromium webkit
+npm run test:responsive
+npx playwright show-report
+```
+
+The suite covers all five routes across ten viewports: 320px phones, iPhone SE,
+393px iPhone, Android, phone landscape, iPad Mini, iPad Air, iPad landscape,
+1440px desktop, and 1920px desktop. iPhone and iPad cases run in WebKit;
+Android and desktop cases run in Chromium.
+
+Checks include overflow, heading and project-title bounds, every lazy-loaded
+portfolio image, touch target sizes, touch navigation, project anchors, the back
+link, email and telephone link destinations, Escape/Enter menu behavior,
+orientation changes, and normal/reduced motion. Screenshot attachments include
+page tops, footers, full pages, open menus, long project titles, and home sections.
+Generated reports and screenshots are in `playwright-report/` and `test-results/`
+(both ignored by Git).
+
+These are browser emulations, not tests on physical iPhones, Android phones, or
+iPads. Native browser chrome, real device performance, and notch insets still need
+physical-device confirmation. Original portfolio image bytes remain unchanged;
+see the image-quality notes above.

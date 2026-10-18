@@ -23,7 +23,7 @@ function ScrollManager() {
   useEffect(() => {
     if (hash) {
       // wait a frame so the target has rendered after a route change
-      requestAnimationFrame(() => document.querySelector(hash)?.scrollIntoView())
+      requestAnimationFrame(() => document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView())
     } else {
       window.scrollTo(0, 0)
     }
@@ -165,7 +165,7 @@ function useScrollFades() {
     const update = () => {
       frame = 0
       const start = window.innerHeight * 0.95
-      const end = window.innerHeight * 0.25
+      const end = window.innerHeight * 0.5
       const travel = Math.min(80, Math.max(48, window.innerWidth * 0.055))
 
       groups.forEach(({ trigger, elements }) => {
@@ -201,19 +201,83 @@ function useScrollFades() {
 }
 
 function Nav({ isHome, shown }) {
+  const location = useLocation()
+  const menuRef = useRef(null)
+  const headerRef = useRef(null)
+  const summaryRef = useRef(null)
+  const [compact, setCompact] = useState(() => window.matchMedia('(max-width: 1023px)').matches)
+
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 1023px)')
+    const update = () => {
+      setCompact(query.matches)
+      if (menuRef.current) menuRef.current.open = false
+    }
+    query.addEventListener('change', update)
+    return () => query.removeEventListener('change', update)
+  }, [])
+
+  useEffect(() => {
+    if (menuRef.current) menuRef.current.open = false
+  }, [location])
+
+  useEffect(() => {
+    const closeOutside = (event) => {
+      if (menuRef.current?.open && !headerRef.current.contains(event.target)) {
+        menuRef.current.open = false
+      }
+    }
+    document.addEventListener('pointerdown', closeOutside)
+    return () => document.removeEventListener('pointerdown', closeOutside)
+  }, [])
+
+  const hidden = isHome && !shown && !compact
+  const closeMenu = (event) => {
+    if (event.target.closest('a')) menuRef.current.open = false
+  }
+
   return (
     <header
-      className={`site-header${isHome ? ' is-home' : ''}${isHome && !shown ? ' is-hidden' : ''}`}
-      inert={isHome && !shown ? true : undefined}
+      ref={headerRef}
+      className={`site-header${isHome ? ' is-home' : ''}${hidden ? ' is-hidden' : ''}`}
+      inert={hidden ? true : undefined}
+      onKeyDown={(event) => {
+        if (event.key === 'Escape' && menuRef.current?.open) {
+          menuRef.current.open = false
+          summaryRef.current.focus()
+        }
+      }}
+      onBlur={(event) => {
+        if (menuRef.current && event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) menuRef.current.open = false
+      }}
     >
       <nav className="nav" aria-label="Main navigation">
         <Link className="brand" to="/" aria-label="The Phi Factor home"><img src={phi} alt="" /></Link>
-        <ServiceIndex />
-        <ul className="nav-links">
-          <li><Link to="/#about">About</Link></li>
-          <li><Link to="/#work">Work</Link></li>
-          <li><Link to="/#contact">Contact</Link></li>
-        </ul>
+        {compact ? (
+          <details className="nav-disclosure" ref={menuRef}>
+            <summary className="menu-toggle" ref={summaryRef}>
+              <span className="menu-open-label">Menu</span><span className="menu-close-label">Close</span>
+              <span className="menu-icon" aria-hidden="true" />
+            </summary>
+            <div className="nav-panel" onClick={closeMenu}>
+              <ServiceIndex />
+              <ul className="nav-links">
+                <li><Link to="/#about">About</Link></li>
+                <li><Link to="/#work">Work</Link></li>
+                <li><Link to="/#contact">Contact</Link></li>
+              </ul>
+            </div>
+          </details>
+        ) : (
+          <>
+            <ServiceIndex />
+            <ul className="nav-links">
+              <li><Link to="/#about">About</Link></li>
+              <li><Link to="/#work">Work</Link></li>
+              <li><Link to="/#contact">Contact</Link></li>
+            </ul>
+          </>
+        )}
       </nav>
       <hr className="rule" />
     </header>
@@ -306,7 +370,7 @@ function Cluster({ c, project, index, count, number }) {
           )
         }
         return (
-          <figure key={key} className={`tile${key === 'hero' ? ' hero' : ''}`} style={style}>
+          <figure key={key} className={`tile tile-${key}${key === 'hero' ? ' hero' : ''}`} style={style}>
             <PortfolioImage src={frameSrc(c.base, key)} alt={`${project.name} ${project.kind.toLowerCase()} still`} hero={key === 'hero'} />
           </figure>
         )
