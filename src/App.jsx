@@ -297,7 +297,6 @@ function Footer() {
           <span className="lbl">Phone</span>
           <a href={PHONE.href}>{PHONE.label}</a>
         </div>
-        <div className="right">The Phi Factor</div>
       </footer>
     </>
   )
